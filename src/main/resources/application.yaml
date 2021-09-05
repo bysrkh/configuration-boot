@@ -1,0 +1,25 @@
+# written by bysrkh. 2021-09-05, IWT. MIT License
+# define configuration for application
+
+# define tomcat port
+server:
+  port: 8888
+
+# define data source for configuration
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: ssh://git@github.com:bysrkh/repository-boot.git
+          search-paths:
+            - notification-boot
+            - tweet-boot
+            - user-boot
+            - security-boot
+#
+#logging:
+#  level:
+#    com.netflix: WARN
+#    org.springframework.web: WARN
+#    com.thoughtmechanix: DEBUG
