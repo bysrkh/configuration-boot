@@ -2,6 +2,8 @@
 # Cirebon, Indonesia
 # MIT-License
 
+# Reference : https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html/appendix-application-properties.html
+
 # defines configuration for application
 
 # defines tomcat port
@@ -17,9 +19,20 @@ spring:
           uri: git@github.com:bysrkh/repository-boot.git
           search-paths:
             - user-boot
-#
-#logging:
-#  level:
-#    com.netflix: WARN
-#    org.springframework.web: WARN
-#    com.thoughtmechanix: DEBUG
+            - security-boot
+
+# define logback logging into console and rollover file by day and file size
+# This config will override https://github.com/spring-projects/spring-boot/blob/v2.2.2.RELEASE/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/
+# Reference: https://docs.spring.io/spring-boot/docs/2.2.2.RELEASE/reference/html/spring-boot-features.html#boot-features-logging
+logging:
+  file:
+    max-size: 100KB
+    total-size-cap: 100MB
+    name: logs/configuration-boot.log
+  pattern:
+    rolling-file-name: 'logs/%d{yyyy/MMMM}/configuration-boot.%d{yyyy-MM-dd}.%i.log.gz'
+    dateformat: yyyy-MM-dd HH:mm:ss.SSSZ
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.thoughtmechanix: DEBUG
