@@ -1,22 +1,22 @@
-# written by bysrkh. 2021-09-05, IWT. MIT License
-# define configuration for application
+# Written in 2021 by bysrkh
+# Cirebon, Indonesia
+# MIT-License
 
-# define tomcat port
+# defines configuration for application
+
+# defines tomcat port
 server:
   port: 8888
 
-# define data source for configuration
+# defines data source for configuration
 spring:
   cloud:
     config:
       server:
         git:
-          uri: ssh://git@github.com:bysrkh/repository-boot.git
+          uri: git@github.com:bysrkh/repository-boot.git
           search-paths:
-            - notification-boot
-            - tweet-boot
             - user-boot
-            - security-boot
 #
 #logging:
 #  level:

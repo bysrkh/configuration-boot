@@ -1,180 +1,213 @@
-/**
- * <p>provides constant for EarlyEnvironmentDiagnosticService class</p>
- * MIT License
- *
- * @author bysrkh
- * @since 2021-10-19
- */
-
 package com.github.bysrkh.configurationboot.util.constant;
 
+/**
+ * provides environment variable key as static string value for checking early environment diagnostic
+ * <p>
+ * It comprises of:
+ * <ul>
+ * <li>{@link EarlyEnvironmentDiagnosticConstant#SYSTEM_VERSION_PROPERTY}
+ * <li>{@link EarlyEnvironmentDiagnosticConstant#SPRING_PROFILE}, etc
+ * </ul>
+ *
+ * @author bysrkh
+ * <br>
+ * @version 0.0.1-SNAPSHOT
+ * <br>
+ * @since 2021-10-23
+ */
 public class EarlyEnvironmentDiagnosticConstant {
 
     /**
-     * <p>Running JVM application's file encoding information.</p>
-     * <p>Follow command bellow to update the running JVM appliation's timezone.</p>
-     * <p><li>
-     * <ul>Windows' command prompt</ul>
-     * <code>setx _JAVA_OPTIONS "-Dfile.encoding=IANA name</code>
-     * <ul>*NIX like GNU/Linux's bash shell</ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Dfile.encoding=IANA name' >> ~/.bashrc</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo 'export _JAVA_OPTIONS=-file.encoding=IANA name' >> ~/.zshrc</code>
-     * </li>
-     * </p>
-     * <p>See the complete list on the<a href="https://www.iana.org/assignments/character-sets/character-sets
-     * .xhtml">link</a>
-     * </p>
+     * Running JVM application's file encoding information.
+     * <p>
+     * Follow command bellow to update the running JVM application's file encoding.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code setx _JAVA_OPTIONS "-Dfile.encoding=IANA name"}</pre>
+     * <li>*NIX like GNU/Linux' bash shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Dfile.encoding=IANA name '>> ~/.bashrc}</pre>
+     *  <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-file.encoding=IANA name' >> ~/.zshrc}</pre>
+     * </ul>
+     *
+     * @see <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">List of IANA name</a>
      */
     public static final String USER_FILE_ENCODING_PROPERTY = "file.encoding";
 
-    /*
-     * <p>Running JVM application's user working directory information</p>
+    /**
+     * Running JVM application's user working directory information.
      */
     public static final String USER_CLASSPATH_PROPERTY = "user.dir";
-    /*
-     * <p>Running JVM application's user directory information</p>
-     * <p>Follow bellow command to compare system user directory  with current jvm user directory.</p>
-     * <ul>Windows's command prompt</ul>
-     * <code>echo %USERPROFILE%</code>
-     * <ul>*NIX-like GNU/Linux's bash shell</ul>
-     * <code>echo $HOME</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo $HOME</code>
-     * </li>
+
+    /**
+     * Running JVM application's user directory information.
+     * <p>
+     * Follow bellow command to compare system user directory  with current jvm user directory.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code echo %USERPROFILE%}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>@{@code echo $HOME}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>@{@code echo $HOME}</pre>
+     * </ul>
      */
     public static final String USER_PATH_PROPERTY = "user.home";
-    /*
-     * <p>Running JVM application's username logon information</p>
-     * <p>Follow bellow command to compare system username logon with current jvm username logon.</p>
-     * <ul>Windows's command prompt</ul>
-     * <code>echo %USERNAME%</code>
-     * <ul>*NIX-like GNU/Linux's bash shell</ul>
-     * <code>echo $USER</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo $USER</code>
-     * </li>
+
+    /**
+     * Running JVM application's user logon information.
+     * <p>
+     * Follow bellow command to compare system user logon  with current jvm user logon.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code echo %USERNAME%}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo $USER}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo $USER}</pre>
+     * </ul>
      */
     public static final String USER_NAME_PROPERTY = "user.name";
 
-    /*
-     * <p>Running JVM application's ISO-8601 timezone information.</p>
-     * <p>Follow bellow command to compare system timezone with current jvm timezone.</p>
-     * <li>
-     * <ul>Windows's command prompt</ul>
-     * <code>1. tzutil.exe /l</code>
-     * <ul> *NIX-like GNU/Linux's bash shell</ul>
-     * <code> timedatectl | grep “Time zone”</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>systemsetup -gettimezone</code>
-     * </li>
-     * <p>Follow command bellow to update the running JVM appliation's timezone.</p>
-     * <li>
-     * <ul>Windows' command prompt</ul>
-     * <code>setx _JAVA_OPTIONS "-Duser.timezone=ISO-8601 code here</code>\
-     * <ul>*NIX like GNU/Linux's bash shell/ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.timezone=ISO-8601 code here' >> ~/.bashrc</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.timezone=ISO-8601 code here' >> ~/.zshrc</code>
-     * </li>
+    /**
+     * Running JVM application's tzdata database name of timezone information.
+     * <p>
+     * Follow the command bellow to compare system with current jvm's tzdata database name of timezone.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code tzutil.exe /l}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code timedatectl | grep “Time zone”}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code systemsetup -gettimezone}</pre>
+     * </ul>
+     * <p>
+     * Follow the command bellow to update the running JVM appliation's timezone.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code setx _JAVA_OPTIONS "-Duser.timezone=tzdata database name here"}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.timezone=tzdata database name here' >> ~/.bashrc}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.timezone=tzdata database name here' >> ~/.zshrc}</pre>
+     * </ul>
+     *
+     * @see
+     * <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">List of ISO-3166 language and country code</a>
      */
     public static final String USER_TIMEZONE = "user.timezone";
 
-    /*
-     * <p>Running JVM application's spring profile</p>
-     * <p>Follow command bellow to update the running JVM appliation's spring profile.</p>
-     * <li>
-     * <ul>Windows' command prompt</ul>
-     * <code>setx SPRING_PROFILE_ACTIVE "sprofile profile here"</code>\
-     * <ul>*NIX like GNU/Linux's bash shell/ul>
-     * <code>echo 'export SPRING_PROFILE_ACTIVE=sprofile profile here' >> ~/.bashrc</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo 'export SPRING_PROFILE_ACTIVE=sprofile profile here' >> ~/.zshrc</code>
-     * </li>
-     *
+    /**
+     * Running JVM application's environment profile information.
+     * <p>
+     * Follow the command bellow to update the running JVM appliation's environment profile.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code setx SPRING_PROFILES_ACTIVE "spring-profile-here"}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo 'export SPRING_PROFILES_ACTIVE=spring-profile-here' >> ~/.bashrc}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo 'export SPRING_PROFILES_ACTIVE=spring-profile-here' >> ~/.zshrc}</pre>
+     * </ul>
+     */
     public static final String SPRING_PROFILE = "spring.profiles.active";
 
-
-    /*
-     * <p>Running JVM application's ISO-3166-1 alpha-2 code country</p>
-     * <p>Follow bellow command to compare system user country with current jvm user country.</p>
-     * <li>
-     * <ul>Windows's command prompt</ul>
-     * <code>systeminfo | findstr /B /C:”System Locale”</code>
-     * <ul> *NIX-like GNU/Linux's bash shell</ul>
-     * <code> localectl status | grep “System Locale”</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>locale | grep "LANG"</code>
-     * </li>
-     * <p>Follow command bellow to update the running JVM appliation's user country.</p>
-     * <li>
-     * <ul>Windows' command prompt</ul>
-     * <code>setx _JAVA_OPTIONS "-Duser.country=ISO-639-1 code language"</code>\
-     * <ul>*NIX like GNU/Linux's bash shell/ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.country=ISO-3166-1 alpha-2 code country' >> ~/.bashrc</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.countrye=ISO-3166-1 alpha-2 code country' >> ~/.zshrc</code>
-     * </li>
-     * See the complete list on the<a href="https://en.wikipedia.org/wiki/ISO_3166-1#Coding">link</>
+    /**
+     * Running JVM application's ISO-3166-1 alpha-2 code country.
+     * <p>
+     * Follow the command bellow to compare system with current jvm's application's ISO-3166-1 alpha-2 code country.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code systeminfo | findstr /B /C:”System Locale”}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code localectl status | grep “System Locale”}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code locale | grep "LANG"}</pre>
+     * </ul>
+     * Follow command bellow to update the running JVM appliation's ISO-3166-1 alpha-2 code country.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code setx _JAVA_OPTIONS "-Duser.country=ISO-3166-1 alpha-2 code country here"}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.country=ISO-3166-1 alpha-2 code country here' >> ~/.bashrc}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.country=ISO-3166-1 alpha-2 code country here' >> ~/.zshrc}</pre>
+     * </ul>
+     *
+     * @see
+     * <a href="https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html">List of ISO-3166-1 alpha-2 language and code country</a>
      */
     public static final String USER_LOCALE_TERRITORY_PROPERTY = "user.country";
 
-    /*
-     * <p>Running JVM application's ISO-639-1 code language</p>
-     * <p>Follow bellow command to compare system user language with current jvm user language.</p>
-     * <li>
-     * <ul>Windows's command prompt</ul>
-     * <code>systeminfo | findstr /B /C:”System Locale”</code>
-     * <ul> *NIX-like GNU/Linux's bash shell</ul>
-     * <code> localectl status | grep “System Locale”</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>locale | grep "LANG"</code>
-     * </li>
-     * <p>Follow command bellow to update the running JVM appliation's code language.</p>
-     * <li>
-     * <ul>Windows' command prompt</ul>
-     * <code>setx _JAVA_OPTIONS "-Duser.language=ISO-639-1 code language"</code>\
-     * <ul>*NIX like GNU/Linux's bash shell/ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.language=ISO-639-1 code language' >> ~/.bashrc</code>
-     * <ul>SUS UNIX-03 macOS' zsh shell</ul>
-     * <code>echo 'export _JAVA_OPTIONS=-Duser.language=ISO-639-1 code language' >> ~/.zshrc</code>
-     * </li>
-     * See the complete list on the<a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">link</>
+    /**
+     * Running JVM application's ISO-3166-1 alpha-2 code country language.
+     * <p>
+     * Follow the command bellow to compare system with current jvm's application's ISO-3166-1 alpha-2 code language.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code systeminfo | findstr /B /C:”System Locale”}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code localectl status | grep “System Locale”}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code locale | grep "LANG"}</pre>
+     * </ul>
+     * Follow command bellow to update the running JVM appliation's ISO-3166-1 alpha-2 code language.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code setx _JAVA_OPTIONS "-Duser.language=ISO-3166-1 alpha-2 language country here"}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.language=ISO-3166-1 alpha-2 code country here' >> ~/.bashrc}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo 'export _JAVA_OPTIONS=-Duser.language=ISO-3166-1 alpha-2 code language here' >> ~/.zshrc}</pre>
+     * </ul>
+     *
+     * @see
+     * <a href="https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html">List of ISO-3166-1 alpha-2 language and code country</a>
      */
     public static final String USER_LOCALE_LANGUAGE_PROPERTY = "user.language";
 
-    /*
-     * <p>Running JVM application's JRE vendor name information</p>
+    /**
+     * Running JVM application's JRE vendor name information.
      */
     public static final String SYSTEM_JAVA_VENDOR_NAME_PROPERTY = "java.vendor";
 
-    /*
-     * <p>Running JVM application's JRE version information</p>
+    /**
+     * Running JVM application's JRE version number information.
      */
     public static final String SYSTEM_JAVA_VERSION_PROPERTY = "java.runtime.version";
 
-    /*
-     * <p>Running JVM application's JRE directory information</p>
+    /**
+     * Running JVM application's JRE directory location information.
+     * <p>
+     * Follow the command bellow to compare system with current jvm's JRE directory location information.
+     * <ul>
+     * <li>Windows' command prompt
+     * <pre>{@code echo %JAVA_HOME%}</pre>
+     * <li>*NIX-like GNU/Linux' bash shell
+     * <pre>{@code echo $JAVA_HOME}</pre>
+     * <li>SUS UNIX-03 macOS' zsh shell
+     * <pre>{@code echo $JAVA_HOME}</pre>
+     * </ul>
      */
     public static final String SYSTEM_JAVA_PATH_PROPERTY = "java.home";
 
-    /*
-     * <p>Running JVM application's OS name information</p>
+    /**
+     * Running JVM application's system name information.
      */
     public static final String SYSTEM_NAME_PROPERTY = "os.name";
 
-    /*
-     * <p>Running JVM application's OS version information</p>
+    /**
+     * Running JVM application's system version information.
      */
     public static final String SYSTEM_VERSION_PROPERTY = "os.version";
 
-    /*
-     * <p>Running JVM application's OS JRE running mode information</p>
+    /**
+     * Running JVM application's JRE running mode information.
      */
     public static final String SYSTEM_JAVA_RUNNING_MODE_PROPERTY = "java.vm.name";
 
-    /*
-     * <p>Running JVM application's OS JRE running mode information</p>
+    /**
+     * Running JVM application's JRE name information.
      */
     public static final String SYSTEM_JAVA_NAME_PROPERTY = "java.runtime.name";
 

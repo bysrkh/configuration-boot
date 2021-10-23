@@ -5,7 +5,7 @@
 -->
 ---
 
-# Table of Contents {#table-of-contents}
+# Table of Contents {#table-of-contents-table-of-contents}
 
 |Contents|
 |---|
@@ -17,16 +17,22 @@
 
 ___
 
-# Description {#description}
+# Description {#description-description}
 
 It is a configuration server for my entire spring-boot microservices in my github build
 for [Spring Cloud version Hoxton.SR8][3]
 ___
 
-# How to run {#how-to-run}
+# How to run {#how-to-run-how-to-run}
 
-1. [Download][1] and install JDK
-2. [Download][2] and install SQL Database
+1. Setup ssh key pairs on current user
+```shell
+ # On Windows NT's command prompt, *NIX like GNU/Linux' bash shell, and SUS UNIX-03 macOS' zsh shell 
+ssh-keygen -t rsa
+# additional command on Windows NT's command prompt only to convert openssh version to legacy version
+ssh-keygen -p -m pem
+```
+2. [Download][1] and install JDK
 3. add `_JAVA_OPTIONS` and some necessary values into user's environment variable
 
 ```shell
@@ -40,7 +46,7 @@ ___
     echo 'export _JAVA_OPTIONS=-Dfile.encoding=UTF-8 -Duser.country=US -Duser.language=en -Duser.timezone=Etc/UTC' >> ~/.zshrc
 ```
 
-4, locate the working directory, then run program
+3. locate the working directory, then run program
 
 ```shell
     # On Windows NT's command prompt
@@ -52,7 +58,7 @@ ___
 
 ---
 
-# Important Release Update {#important-release-update}
+# Important Release Update {#important-release-update-important-release-update}
 
 |Version|Description|
 |---:|---|
@@ -60,7 +66,7 @@ ___
 
 ---
 
-# Discussion Channel {#discussion-channel}
+# Discussion Channel {#discussion-channel-discussion-channel}
 
 I am really open for discussion on here
 

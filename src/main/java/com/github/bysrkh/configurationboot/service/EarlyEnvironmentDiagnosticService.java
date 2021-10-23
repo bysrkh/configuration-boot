@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import javax.annotation.PostConstruct;
 
 
+import static com.github.bysrkh.configurationboot.util.constant.EarlyEnvironmentDiagnosticConstant.SPRING_PROFILE;
 import static com.github.bysrkh.configurationboot.util.constant.EarlyEnvironmentDiagnosticConstant.SYSTEM_JAVA_NAME_PROPERTY;
 import static com.github.bysrkh.configurationboot.util.constant.EarlyEnvironmentDiagnosticConstant.SYSTEM_JAVA_PATH_PROPERTY;
 import static com.github.bysrkh.configurationboot.util.constant.EarlyEnvironmentDiagnosticConstant.SYSTEM_JAVA_RUNNING_MODE_PROPERTY;
@@ -39,7 +40,7 @@ public class EarlyEnvironmentDiagnosticService {
     private Environment env;
 
     /**
-     * <p>Check early environment diagnostic process<p>
+     * Check early environment diagnostic process
      */
     @PostConstruct
     public void showEarlyEnvironmentDiagnostic() {
@@ -55,6 +56,7 @@ public class EarlyEnvironmentDiagnosticService {
                  env.getProperty(SYSTEM_JAVA_RUNNING_MODE_PROPERTY));
         log.info("Java Home : {}", env.getProperty(SYSTEM_JAVA_PATH_PROPERTY));
         log.info("Java Classpath : {}", env.getProperty(USER_CLASSPATH_PROPERTY));
+        log.info("Application Environment Profile : {}", env.getProperty(SPRING_PROFILE));
 
     }
 
